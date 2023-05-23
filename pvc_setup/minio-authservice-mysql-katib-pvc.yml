@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio-pvc
+  namespace: kubeflow
+  labels:
+    app: minio-storage-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  resources:
+    requests:
+      storage: 30Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: authservice-pvc
+  namespace: istio-system
+  labels:
+    app: authservice-storage-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  resources:
+    requests:
+      storage: 30Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  namespace: kubeflow
+  labels:
+    app: mysql-storage-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  resources:
+    requests:
+      storage: 30Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: katib-mysql
+  namespace: kubeflow
+  labels:
+    app: katib-mysql-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  resources:
+    requests:
+      storage: 30Gi

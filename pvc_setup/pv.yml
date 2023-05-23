@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv1
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv2
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv3
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv2
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv4
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv5
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-nfs-storage
+  hostPath:
+    path: /srv/nfs/storage
+#kubectl patch pvc (pv) {PVC_NAME} -p '{"metadata":{"finalizers":null}}'
